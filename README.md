@@ -97,9 +97,14 @@ Enable and allow required ports:
 
 ```bash
 sudo ufw enable
-sudo ufw allow 'OpenSSH'
-sudo ufw allow 4000
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+sudo ufw allow OpenSSH
 sudo ufw allow 'Nginx Full'
+
+sudo ufw enable
+sudo ufw status
 ```
 
 ---
